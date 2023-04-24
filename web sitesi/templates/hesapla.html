@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lobster&family=Roboto&display=swap">
+
+    <title>hesapla</title>
+
+</head>
+
+<style>
+    .alert {
+        background: rgb(149, 180, 62);
+        padding: 1rem;
+        border-radius: 20px;
+        color: rgb(255, 255, 255);
+        margin: 1rem;
+    }
+
+    li {
+        display: inline;
+    }
+
+    .button {
+        border: 2px solid #ffffff;
+        color: rgb(222, 222, 222);
+        padding: 10px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        cursor: pointer;
+        background-color: rgba(217, 255, 0, 0);
+        border-radius: 20px;
+        transition-duration: 0.24s
+    }
+
+    .button:hover {
+        background-color: #00396b;
+        border: 2px solid #00396b;
+        box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+        color: #ffffff;
+    }
+
+    .button2 {
+        width: auto;
+        margin-right: 30px;
+        float: right;
+        background-color: #00396b;
+        color: rgb(207, 207, 207);
+    }
+
+    .button2:hover {
+        color: #ffffff;
+        background-color: #00396b;
+    }
+
+
+
+    .grid-container {
+        display: grid;
+        grid-template-columns: 5 5 5;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .grid-container>div {
+        background-color: rgba(255, 255, 255, 0.8);
+        text-align: center;
+        padding: 20px 0;
+        font-size: 30px;
+    }
+
+    .grid-item {
+        background-color: rgba(255, 255, 255, 0.8);
+        border: 1px solid rgb(230, 230, 230);
+        padding: 20px;
+        text-align: center;
+    }
+
+    .select-bordered {
+        padding: 2px;
+        width: 110px;
+        border: 0;
+        border: 1px solid teal;
+        border-radius: 10px;
+    }
+
+    .sol {
+        width: 35%;
+        float: left;
+        color: tomato;
+        background-color: #bebebe91;
+        padding: 20px;
+        margin: 0 auto;
+        border-radius: 20px;
+    }
+
+    .sag {
+        margin: 0 auto;
+        width: 35%;
+        float: right;
+        color: tomato;
+        background-color: #bebebe91;
+        padding: 20px;
+        border-radius: 20px;
+    }
+
+    .ensag {
+        margin: 0 auto;
+        width: 20%;
+        color: tomato;
+        background-color: #bebebe91;
+        padding: 20px;
+        border-radius: 20px;
+    }
+</style>
+
+
+
+<header style="background-color: #154d82;padding: 30px;border-bottom: 1px solid grey;">
+
+    <div class="container">
+        <li><a href="/" class="button" style="margin-left: 20px;">Ana Sayfa</a></li>
+        <li><a href="/hesapla" class="button" style="margin-left: 20px;">Hesaplayıcı</a></li>
+    </div>
+
+</header>
+
+
+<body>
+    <div class="container" style="background-color: rgb(240, 240, 240);        border-end-end-radius: 50px;
+    border-end-start-radius: 50px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-left: 1px solid grey;
+    border-right: 1px solid grey;
+    border-bottom: 1px solid grey;
+    padding-bottom: 50px;">
+        <div class="grid-container">
+            <form action="/send" method="POST">
+                <div class="sol">
+
+                    <label for="Operation" style="font-weight:bold ">Cinsiyet</label>
+                    <select class="select-bordered" name="cinsiyet">
+                        <option value="0">Kadın</option>
+                        <option value="1">Erkek</option>
+                        <option value="2">Diğer/Bilinmiyor</option>
+                    </select>
+                    <p> </p>
+                    <label for="Operation" style="font-weight:bold">Yaşadığı Bölge</label>
+                    <select class="select-bordered" name="bolge">
+                        <option value="0">Kirsal</option>
+                        <option value="1">Kentsel</option>
+                        <option value="2">Bilinmiyor</option>
+                    </select>
+                    <p> </p>
+                    <label for="Operation" style="font-weight:bold">Anne Eğitim Düzeyi</label>
+                    <select class="select-bordered" name="medu">
+                        <option value="0">Yok</option>
+                        <option value="1">İlköğretim</option>
+                        <option value="2">Ortaöğretim</option>
+                        <option value="3">Lise</option>
+                        <option value="4">Lisans</option>
+                        <option value="5">Bilinmiyor</option>
+                    </select>
+                    <p> </p>
+                    <label for="Operation" style="font-weight:bold">Baba Eğitim Düzeyi</label>
+                    <select class="select-bordered" name="fedu">
+                        <option value="0">Yok</option>
+                        <option value="1">İlköğretim</option>
+                        <option value="2">Ortaöğretim</option>
+                        <option value="3">Lise</option>
+                        <option value="4">Lisans</option>
+                        <option value="5">Bilinmiyor</option>
+                    </select>
+                    <p> </p>
+                    <label for="Operation" style="font-weight:bold">Anne işi</label>
+                    <select class="select-bordered" name="mjob">
+                        <option value="5">Bilinmiyor</option>
+                        <option value="0">Öğretmen</option>
+                        <option value="1">Sağlık</option>
+                        <option value="2">Sivil Hizmetler</option>
+                        <option value="3">Evde</option>
+                        <option value="4">Diğer</option>
+                    </select>
+                    <p> </p>
+                    <label for="Operation" style="font-weight:bold">Baba işi</label>
+                    <select class="select-bordered" name="fjob">
+                        <option value="5">Bilinmiyor</option>
+                        <option value="0">Öğretmen</option>
+                        <option value="1">Sağlık</option>
+                        <option value="2">Sivil Hizmetler</option>
+                        <option value="3">Evde</option>
+                        <option value="4">Diğer</option>
+                    </select>
+                    <p> </p>
+                    <label for="Operation" style="font-weight:bold">Veli</label>
+                    <select class="select-bordered" name="veli">
+                        <option value="0">Anne</option>
+                        <option value="1">Baba</option>
+                        <option value="2">Diğer</option>
+                        <option value="3">Bilinmiyor</option>
+                    </select>
+                    </table>
+
+
+                </div>
+                <div class="sag" style="margin-top: 20px;">
+                    <label for="Operation" style="font-weight:bold">Hafatlık Çalışma</label>
+                    <select class="select-bordered" name="stime">
+                        <option value="1">2 saaten az</option>
+                        <option value="2">2 - 5 saat</option>
+                        <option value="3">5 - 10 saat</option>
+                        <option value="4">10 saatten fazla</option>
+                        <option value="5">Bilinmiyor</option>
+                    </select>
+                    <p> </p>
+                    <label for="Operation" style="font-weight:bold">Okul kurs desteği</label>
+                    <select class="select-bordered" name="ssup">
+                        <option value="0">Hayır</option>
+                        <option value="1">Evet</option>
+                        <option value="2">Bilinmiyor</option>
+                    </select>
+                    <p> </p>
+                    <label for="Operation" style="font-weight:bold">Aile kurs desteği</label>
+                    <select class="select-bordered" name="fsup">
+                        <option value="0">Hayır</option>
+                        <option value="1">Evet</option>
+                        <option value="2">Bilinmiyor</option>
+                    </select>
+                    <p> </p>
+                    <label for="Operation" style="font-weight:bold">Ücretli kurs desteği</label>
+                    <select class="select-bordered" name="paid">
+                        <option value="0">Hayır</option>
+                        <option value="1">Evet</option>
+                        <option value="2">Bilinmiyor</option>
+                    </select>
+                    <p> </p>
+                    <label for="Operation" style="font-weight:bold">Kreş</label>
+                    <select class="select-bordered" name="nursery">
+                        <option value="0">Gitmedi</option>
+                        <option value="1">Gitti</option>
+                        <option value="2">Bilinmiyor</option>
+                    </select>
+                    <p> </p>
+                    <label for="Operation" style="font-weight:bold">İnternet erişimi</label>
+                    <select class="select-bordered" name="internet">
+                        <option value="0" name="0">Yok</option>
+                        <option value="1" name="1">Var</option>
+                        <option value="2" name="2">Bilinmiyor</option>
+                    </select>
+
+                </div>
+                <div class="ensag" style="margin-top: 20px;">
+                    <label for="" style="font-weight:bold">Ara sinav 1</label>
+                    <input style="text-align: center;        padding: 2px;
+                    width: auto;
+                    border: 0;
+                    border: 1px solid teal;
+                    border-radius: 10px;" type="text" placeholder="100 uzerinden notu" class="u-full-width"
+                        name="g1" />
+                </div>
+        </div>
+
+        <div class="hesapla">
+            <div class="alert" style="font-size: 20px;font-weight:bold;text-align: center;">
+                {{ toplam }}
+            </div>
+            <div>
+                <input type="submit" value="HESAPLA" class="btn button2" />
+            </div>
+            </form>
+        </div>
+    </div>
+
+</html>
