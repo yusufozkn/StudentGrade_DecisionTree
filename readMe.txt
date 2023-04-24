@@ -8,7 +8,7 @@
 
 	~Kodun calisabilmesi icin student-mat.csv ve app.py dosyalari ayni konumda olmalidir.
 	
-	------------------------
+	----------------
 
 	~StudentGrade_DecisionTree-FINAL.ipynb dosyasinin acilabilmesi icin jupyter-lab indirilmelidir.
 
